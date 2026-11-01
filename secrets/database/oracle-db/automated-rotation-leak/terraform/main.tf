@@ -10,6 +10,8 @@ locals {
     region_b64  = base64encode(var.aws_region)
     kms_b64     = base64encode(aws_kms_key.unseal.key_id)
     license_b64 = base64encode(trimspace(var.vault_license))
+    vault_b64   = base64encode(var.vault_version)
+    plugin_b64  = base64encode(var.plugin_version)
     scripts = {
       "bootstrap.sh" = filebase64("${path.module}/../scripts/bootstrap.sh")
       "configure.sh" = filebase64("${path.module}/../scripts/configure.sh")

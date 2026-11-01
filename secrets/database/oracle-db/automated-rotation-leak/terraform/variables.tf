@@ -50,6 +50,18 @@ variable "key_name" {
   description = "Existing EC2 key pair name for SSH access."
 }
 
+variable "vault_version" {
+  type        = string
+  default     = "1.21.9+ent"
+  description = "Vault Enterprise version installed by bootstrap.sh (read from /root/oracle-lab/vault-version)."
+}
+
+variable "plugin_version" {
+  type        = string
+  default     = "0.11.0+ent"
+  description = "Oracle database plugin version registered by configure.sh (read from /root/oracle-lab/plugin-version)."
+}
+
 variable "vault_license" {
   type        = string
   sensitive   = true
