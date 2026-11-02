@@ -21,6 +21,18 @@ variable "name_prefix" {
   }
 }
 
+variable "ami_owner" {
+  type        = string
+  default     = "888995627335"
+  description = "Account that owns the base image (default: HashiCorp ami-prod). Use \"amazon\" in accounts that cannot see hc-base images."
+}
+
+variable "ami_name_pattern" {
+  type        = string
+  default     = "hc-base-al2023-x86_64-*"
+  description = "Name filter for the base image; it must be Amazon Linux 2023 x86-64 (bootstrap.sh uses dnf and ec2-user)."
+}
+
 variable "instance_type" {
   type        = string
   default     = "t3.large"
